@@ -1,5 +1,5 @@
 {
-  "name": "Config Auditor",
+  "name": "Infrastructure Policy Engine",
   "skills": "Policy as code, infrastructure validation, compliance reports",
   "entity": "configuration",
   "fields": [
@@ -27,5 +27,7 @@
     "Docker",
     "Kubernetes",
     "GitHub Actions"
-  ]
+  ],
+  "slug": "infrastructure-policy-engine",
+  "engineering_version": "3.0.0"
 }

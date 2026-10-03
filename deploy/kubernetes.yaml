@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: 10-config-auditor-data
+  name: infrastructure-policy-engine-data
 spec:
   accessModes: [ReadWriteOnce]
   resources:
@@ -11,18 +11,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 10-config-auditor
+  name: infrastructure-policy-engine
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: 10-config-auditor
+      app: infrastructure-policy-engine
   template:
     metadata:
       labels:
-        app: 10-config-auditor
+        app: infrastructure-policy-engine
     spec:
       securityContext:
         runAsNonRoot: true
@@ -30,7 +30,7 @@ spec:
         fsGroup: 10001
       containers:
         - name: app
-          image: 10-config-auditor:local
+          image: infrastructure-policy-engine:local
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8110
@@ -60,15 +60,15 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: 10-config-auditor-data
+            claimName: infrastructure-policy-engine-data
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: 10-config-auditor
+  name: infrastructure-policy-engine
 spec:
   selector:
-    app: 10-config-auditor
+    app: infrastructure-policy-engine
   ports:
     - port: 80
       targetPort: 8110
