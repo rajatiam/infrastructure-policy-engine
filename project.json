@@ -15,5 +15,17 @@
     "backup": true
   },
   "kind": "policy",
-  "port": 8110
+  "port": 8110,
+  "description": "Validate infrastructure settings with clear policy findings.",
+  "accent": "#e11d48",
+  "stack": [
+    "Python",
+    "FastAPI",
+    "Angular",
+    "TypeScript",
+    "SQLite",
+    "Docker",
+    "Kubernetes",
+    "GitHub Actions"
+  ]
 }
