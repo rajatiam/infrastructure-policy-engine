@@ -1,0 +1,19 @@
+{
+  "name": "Config Auditor",
+  "skills": "Policy as code, infrastructure validation, compliance reports",
+  "entity": "configuration",
+  "fields": [
+    "name",
+    "public",
+    "encrypted",
+    "backup"
+  ],
+  "example": {
+    "name": "customer-db",
+    "public": false,
+    "encrypted": true,
+    "backup": true
+  },
+  "kind": "policy",
+  "port": 8110
+}
